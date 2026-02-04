@@ -1,0 +1,38 @@
+# Build artifacts
+/build/
+/bin/
+/Debug/
+/Release/
+/x64/
+/out/          
+/*.exe
+/*.dll
+/*.pdb
+/*.obj
+/*.lib
+/*.exp
+/*.idb
+/*.ipdb
+/*.pch
+
+# CLion files
+.idea/
+
+# Visual Studio files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# CMake files
+cmake-build-debug/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake.user
+
+# Misc
+*.log
+*.tmp
