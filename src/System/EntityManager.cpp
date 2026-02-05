@@ -16,6 +16,8 @@ namespace Pong {
 
     void EntityManager::registerEntity(Entity *entity) {
         m_entities.push_back(entity);
+
+        if (m_started) entity->start();
     }
 
     void EntityManager::unregisterEntity(Entity *entity) {
@@ -25,10 +27,12 @@ namespace Pong {
             );
     }
 
-    void EntityManager::start() const {
+    void EntityManager::start() {
         for (auto* entity : m_entities) {
             entity->start();
         }
+
+        m_started = true;
     }
 
     void EntityManager::update(float dt) const {

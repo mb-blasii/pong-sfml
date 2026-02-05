@@ -7,6 +7,7 @@ namespace Pong {
 
     class EntityManager {
     private:
+        bool m_started = false;
         static EntityManager *m_instance;
         std::vector<Entity *> m_entities;
 
@@ -21,7 +22,7 @@ namespace Pong {
 
         void unregisterEntity(Entity *entity);
 
-        void start() const;
+        void start();
 
         void update(float dt) const;
     };

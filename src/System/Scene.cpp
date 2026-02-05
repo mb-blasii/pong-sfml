@@ -14,6 +14,10 @@ namespace Pong {
         paddle_L = new Paddle(Paddle::Left);
         paddle_R = new Paddle(Paddle::Right);
         ball = new Ball();
+
+        //UI
+        mainScreen = new MainScreen();
+
     }
 
     Scene* Scene::getInstance() {

@@ -10,7 +10,7 @@ namespace Pong {
             "Pong - SFML"
         ) {
             setVerticalSyncEnabled(true);
-            setFramerateLimit(60);
+            setFramerateLimit(120);
 
             sf::View view;
 

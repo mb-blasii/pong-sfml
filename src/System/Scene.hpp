@@ -1,4 +1,6 @@
 #pragma once
+#include "Game/UI/MainScreen.hpp"
+#include "Game/UI/PongText.hpp"
 
 namespace Pong {
     class DashedLineShape;
@@ -24,5 +26,8 @@ namespace Pong {
         Ball* ball;
         GameBorder* gameBorder;
         DashedLineShape* dashedLine;
+
+        //UI
+        MainScreen* mainScreen;
     };
 }
