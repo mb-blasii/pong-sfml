@@ -7,9 +7,22 @@ project(Pong_SFML
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(Pong_SFML
-        src/main.cpp
+file(GLOB_RECURSE PONG_SOURCES
+        src/*.cpp
 )
+
+file(GLOB_RECURSE PONG_HEADERS
+        src/*.h
+        src/*.hpp
+)
+
+include_directories(src)
+
+add_executable(Pong_SFML
+        ${PONG_SOURCES}
+        ${PONG_HEADERS}
+)
+
 
 #System binaries
 set(PROJECT_RUNTIME_DIR
