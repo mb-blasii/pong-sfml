@@ -1,4 +1,5 @@
 #pragma once
+#include "Game/Audio/MusicPlayer.hpp"
 #include "Game/UI/MainScreen.hpp"
 #include "Game/UI/PongText.hpp"
 
@@ -26,6 +27,9 @@ namespace Pong {
         Ball* ball;
         GameBorder* gameBorder;
         DashedLineShape* dashedLine;
+
+        MusicPlayer mp;
+
 
         //UI
         MainScreen* mainScreen;

@@ -3,7 +3,6 @@
 
 #include "Game/GameState.hpp"
 #include "Game/GameWindow.hpp"
-#include "Game/UI/Score.hpp"
 #include "Game/UI/ScoreScreen.hpp"
 #include "System/EntityManager.hpp"
 #include "System/Renderer.hpp"

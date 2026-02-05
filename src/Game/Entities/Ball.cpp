@@ -73,22 +73,32 @@ namespace Pong {
         if (hasBounce(*m_padL->m_worldBox) || hasBounce(*m_padR->m_worldBox)) {
             m_dir = computeBounceDirection(m_dir);
             m_accSpeed += 25;
+
+            m_bounceSfx.playSound();
         }
 
-        if (hasBounce(*m_boxTop) || hasBounce(*m_boxBottom))
+        if (hasBounce(*m_boxTop) || hasBounce(*m_boxBottom)) {
             m_dir = {m_dir.x, -m_dir.y, m_dir.z};
+
+            m_bounceSfx.playSound();
+        }
 
         if (hasBounce(*m_boxLeft)) {
             GameState::getInstance()->setScoreRight();
             m_accSpeed = 0;
             m_transform.setWorldPosition({0,0,0});
             m_dir = computeRandomDirection();
+
+            m_failSfx.playSound();
         }
+
         if (hasBounce(*m_boxRight)) {
             GameState::getInstance()->setScoreLeft();
             m_accSpeed = 0;
             m_transform.setWorldPosition({0,0,0});
             m_dir = computeRandomDirection();
+
+            m_failSfx.playSound();
         }
     }
 
