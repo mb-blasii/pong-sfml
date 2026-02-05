@@ -94,3 +94,11 @@ add_custom_command(TARGET Pong_SFML POST_BUILD
         ${AtlasSDK_DLLS}
         $<TARGET_FILE_DIR:Pong_SFML>
 )
+
+# resources
+add_custom_target(copy_res ALL
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${CMAKE_SOURCE_DIR}/res
+        $<TARGET_FILE_DIR:Pong_SFML>/res
+)
+add_dependencies(Pong_SFML copy_res)

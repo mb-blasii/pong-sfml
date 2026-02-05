@@ -3,6 +3,8 @@
 #include "System/Renderer.hpp"
 #include <Conversions/AtlasConversions.hpp>
 
+#include "Game/GameState.hpp"
+
 namespace Pong {
 
     Paddle::Paddle(Side side) {
@@ -34,6 +36,13 @@ namespace Pong {
     }
 
     void Paddle::update(float dt) {
+
+        if (!GameState::getInstance()->isPlaying) {
+            m_posY = 0;
+            m_transform.setWorldPosition({m_posX, m_posY, 0});
+            m_paddleShape->setPosition({ m_posX, m_posY });
+            return;
+        }
 
         if (sf::Keyboard::isKeyPressed(m_upKey)) {
             m_posY -= PADDLE_SPEED * dt;

@@ -4,6 +4,8 @@
 #include <atlas/physics/shapes/shape2d.h>
 
 #include "atlas/core/transform/transform.h"
+#include "Game/Audio/BounceSound.hpp"
+#include "Game/Audio/FailSound.hpp"
 
 namespace Pong {
     class Paddle;
@@ -35,6 +37,8 @@ namespace Pong {
         atlas::physics::shape::Circle m_localCircle;
         atlas::physics::shape::Circle m_worldCircle;
 
+        BounceSound m_bounceSfx;
+        FailSound m_failSfx;
 
         //Utility
         bool hasBounce(const atlas::physics::shape::Box2D& box) const;
